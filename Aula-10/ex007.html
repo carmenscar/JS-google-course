@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum math</title>
+    <style>
+      body {
+        font: normal 18pt Arial;
+      }
+      input {
+        width: 100px;
+      }
+      div#results {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Adding numbers</h1>
+    <input type="number" name="txtn1" id="txtn1" /> +
+    <input type="number" name="txtn2" id="txtn2" />
+    <input type="button" value="somar" onclick="sum()" />
+    <div id="results">Results</div>
+    <script>
+      function sum() {
+        var tn1 = document.getElementById("txtn1"); // selecionando pelo ID
+        var tn2 = document.querySelector("input#txtn2"); // selecionando pelo ID via query selector
+        var res = window.document.getElementById("results");
+
+        var n1 = Number(tn1.value); // no input ele vem como texto
+        var n2 = Number(tn2.value);
+        var summing = n1 + n2;
+
+        res.innerHTML = `The sum between ${n1} and ${n2} is = <strong>${summing} </strong>`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM events</title>
+    <style>
+      div#area {
+        font: normal 15pt Arial;
+        background: rgb(163, 62, 79);
+        color: rgb(26, 27, 28);
+        width: 400px;
+        height: 400px;
+        text-align: center;
+        white-space: normal;
+        display: flex;
+        justify-content: center; /* Alinha horizontalmente */
+        align-items: center; /* Alinha verticalmente */
+        overflow-wrap: break-word;
+        overflow: hidden;
+        padding: 10px; /* O padding foi mantido, mas não afeta o alinhamento agora */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="area">Passe o mouse sobre o quadrado</div>
+    <script>
+      /* minha <div> anterior era assim:
+    <div
+      id="area"
+      onclick="clicklove()"
+      onmouseenter="clickmsg()"
+      onmouseout="clickout()"
+    >
+    mas para tornar o código mais visual podemos adicionar os listeners abaixo
+    */
+
+      var area = window.document.getElementById("area");
+      area.addEventListener("click", clicklove);
+      area.addEventListener("mouseenter", clickmsg);
+      area.addEventListener("mouseout", clickout);
+
+      function clicklove() {
+        area.innerText = "I love you, mozão";
+        area.style.background = "red";
+      }
+      function clickmsg() {
+        area.innerText = "Agora clique aqui";
+      }
+      function clickout() {
+        area.innerText = "Cada dia mais e mais";
+        area.style.background = "pink";
+      }
+    </script>
+  </body>
+</html>
