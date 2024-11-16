@@ -4,9 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Starting with DOM</title>
+    <style>
+      body {
+        background: black;
+        color: white;
+        font: normal 18pt Arial;
+      }
+    </style>
   </head>
   <body>
     <h1>Starting with DOM</h1>
     <p>Loading...</p>
+    <p>Loading p2</p>
+    <div id="msg">Click here (id)</div>
+    <div name="msg2">Click here (name)</div>
+    <div class="msg3">Click here (class)</div>
+    <div id="msg4">Click here (id2)</div>
+    <script>
+      window.document.write("testando script<br>");
+      var p2 = window.document.getElementsByTagName("p")[1];
+      var body1 = window.document.body;
+      window.document.write(p2.innerText);
+      p2.style.color = "yellow";
+      body1.style.color = "red";
+
+      var id1 = window.document.getElementById("msg");
+      id1.style.color = "yellow";
+      id1.innerText = "selecting by id";
+
+      var name1 =
+        window.document.getElementsByName(
+          "msg2"
+        )[0]; /* getElementsByName retorna um array
+      então mesmo que só tiver um elemento, temos que mostrar o elemento específico (0),
+      Já o getElementById retorna um unico elemento (não está no plural) */
+      name1.style.color = "yellow";
+      name1.innerText = "selecting by name";
+
+      var class1 = window.document.querySelector("div#msg4");
+      /* O '#' é utilizado quando vamos pegar o id, no caso de pegar uma classe devevos usar '.'
+      se fosse uma classe, como na terceira div, o código seria:
+      var class1 = window.document.querySelector("div.msg3"); */
+      class1.style.color = "green";
+      class1.innerText = "selecting by id with query selector";
+    </script>
   </body>
 </html>
